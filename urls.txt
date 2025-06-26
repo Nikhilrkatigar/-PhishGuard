@@ -1,0 +1,25 @@
+## Safe/Legitimate URLs (Should show Low Risk):
+- `https://www.google.com`
+- `https://github.com/microsoft`
+- `https://www.amazon.com/products`
+- `https://linkedin.com/in/profile`
+- `https://apple.com/iphone`
+
+## Medium Risk URLs (Should trigger warnings):
+- `http://example-bank-verify.com` (No HTTPS + suspicious keywords)
+- `https://account-suspended-paypal.com` (Suspicious keywords)
+- `https://secure-login-update.site` (Multiple suspicious keywords)
+- `https://sub1.sub2.sub3.example.com` (Excessive subdomains)
+- `https://bit.ly/test123` (URL shortener)
+
+## High Risk URLs (Should show High Risk):
+- `http://192.168.1.1/login` (IP address + no HTTPS)
+- `https://example.tk/urgent-verify` (Suspicious TLD + keywords)
+- `https://paypal-security-update.ml` (Suspicious TLD + keywords)
+- `http://very-long-suspicious-domain-name-that-looks-like-phishing.click` (Long domain + suspicious TLD)
+- `https://аpple.com` (Homograph attack - contains Cyrillic 'а' instead of Latin 'a')
+
+## URLs with Multiple Issues:
+- `http://urgent-bank-verify.tk/secure%20login%20here` (No HTTPS + suspicious TLD + keywords + URL encoding)
+- `https://sub.domain.paypal-update.ml/verify` (Multiple subdomains + suspicious TLD + keywords)
+
